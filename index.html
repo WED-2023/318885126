@@ -4,107 +4,179 @@
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-<div id="menu">
-<li><a href="#about">About Me</a></li>
-<li><a href="#photos">My Photos</a></li>
-<li><a href="#playlist">My Playlist</a></li>
-<li><a href="#like">Like</a></li>
-<li><a href="#qrcoder">QR code</a></li>
-<li><a href="#spa">Q&A</a></li>
-<li><a href="#contact">Contact Me</a></li>
+  <div id="menu">
+    <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#photos">My Photos</a></li>
+        <li><a href="#playlist">My Playlist</a></li>
+        <li><a href="#like">Like</a></li>
+        <li><a href="#qrcoder">QR Code</a></li>
+        <li><a href="#spa">Q&A</a></li>
+        <li><a href="#contact">Contact Me</a></li>
+    </ul>
 </div>
 		  
 <section id="about" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-about me
-<br/>
-<br/>
-<br/>
+  <div class="cover-image"></div>
+  <img src="up_elder.jpg" alt="Carl Fredricksen" class="profile-picture">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="content-container">
+                  <h1>Carl Fredricksen</h1>
+                  <p>1930 - 2022</p>
+                  <p>Carl Fredricksen is the main character of Up. He also appeared in Dug's Special Mission as a supporting character, in George and A.J. as a minor character, and in the Disney+ series Dug Days, as a main character.</p>
+                  <p>In 1939, 9-year-old Carl Fredricksen[1] was a shy, quiet boy who idolized renowned explorer Charles F. Muntz. One day, Carl befriended an adventurous girl named Ellie, who was also a Muntz fan. She confided to Carl her desire to move her "clubhouse"—an abandoned house in the neighborhood—to a cliff overlooking Paradise Falls and made him promise to help her. Carl and Ellie eventually got married and grew old together in the restored house, working in a zoo as a balloon vendor, and as a zookeeper, respectively. They planned to have children, but Ellie was diagnosed infertile, and they repeatedly pooled their savings for a trip to Paradise Falls but ended up spending it on more pressing needs.</p>
+                  <p>Just as Carl and Ellie finally seemed to be able to make their trip, Ellie contracted a terminal illness and passed away. Carl became bitter living in the house on his own as he missed his wife terribly. As the years passed, urban growth surrounded Carl's old house, which he refused to sell to developers.</p>
+              </div>
+          </div>
+      </div>
+      </div>        
+  </div>
 </section>
 
 <section id="photos" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my photos
-<br/>
-<br/>
-<br/>
+  <div class="container slideshow-container">
+      <h1>Photos</h1>
+      <div class="slides">
+          <div class="slide">
+              <img src="up_cover.jpg" alt="Image 1">
+              <div class="share-buttons">
+                  <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
+                      <img src="facebook-icon.png" alt="Share on Facebook">
+                  </a>
+                  <a class="twitter-share" href="#" target="_blank" rel="noopener noreferrer">
+                      <img src="twitter-icon.png" alt="Share on Twitter">
+                  </a>
+                  <a class="insta-share" href="#" target="_blank" rel="noopener noreferrer">
+                      <img src="instagram-icon.png" alt="Share on Instagram">
+                  </a>
+              </div>
+          </div>
+          <div class="slide">
+              <img src="up_elder.jpg" alt="Image 2">
+              <div class="share-buttons">
+                  <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
+                      <img src="facebook-icon.png" alt="Share on Facebook">
+                  </a>
+                  <a class="twitter-share" href="#" target="_blank" rel="noopener noreferrer">
+                      <img src="twitter-icon.png" alt="Share on Twitter">
+                  </a>
+                  <a class="insta-share" href="#" target="_blank" rel="noopener noreferrer">
+                      <img src="instagram-icon.png" alt="Share on Instagram">
+                  </a>
+              </div>
+          </div>
+          <!-- Add more slides as needed -->
+      </div>
+  </div>
+  <script>
+      let slideIndex = 0;
+      function showSlides() {
+          const slides = document.querySelectorAll('.slide');
+          slides.forEach(slide => slide.style.display = 'none');
+          slideIndex++;
+          if (slideIndex > slides.length) slideIndex = 1;
+          slides[slideIndex - 1].style.display = 'block';
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+      }
+      showSlides(); // Initializes the slideshow
+  </script>
 </section>
+
 
 <section id="playlist" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-my playlist
-<br/>
-<br/>
-<br/>
+  <div class="container">
+      <h1>Playlist</h1>
+      <ul class="playlist">
+          <li>
+              <p>Song 1 - Married Life</p>
+              <audio id="song1" controls>
+                  <source src="Up (Soundtrack) - 03 Married Life.mp3" type="audio/mpeg">
+              </audio>
+          </li>
+          <li>
+              <p>Carl Goes Up - Artist 2</p>
+              <audio id="song2" controls>
+                  <source src="Up (Soundtrack) - 04 Carl Goes Up.mp3" type="audio/mpeg">
+              </audio>
+          </li>
+          <!-- Add more songs as needed -->
+      </ul>
+  </div>
+  <script>
+      // Get all audio elements
+      const audioElements = document.querySelectorAll('audio');
+      // Pause all audio elements when one is played
+      audioElements.forEach(audio => {
+          audio.addEventListener('play', function() {
+              audioElements.forEach(otherAudio => {
+                  if (otherAudio !== audio && !otherAudio.paused) {
+                      otherAudio.pause();
+                  }
+              });
+          });
+      });
+  </script>
 </section>
 
+
 <section id="like" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-give me a like
-<br/>
-<br/>
-<br/>
+  <div class="like-content">
+    <h1>Fly a Balloon for dear Carl?</h1>
+    <div style="display: flex; justify-content: center;">
+      <button id="likeButton">Fly Balloon</button>
+    </div>
+  </div>
+  <script>
+    // Function to create a single balloon emoji
+    function createBalloonEmoji() {
+      const balloon = document.createElement('span');
+      balloon.innerHTML = '🎈';
+      balloon.classList.add('balloon');
+      const randomLeft = Math.random() * 100;
+      const randomTop = Math.random() * 100;
+      const randomSize = Math.floor(Math.random() * 30) + 20; // Random size between 20 and 50
+      const randomDelay = Math.random() * 5; // Add random delay to each balloon
+      balloon.style.left = `${randomLeft}vw`;
+      balloon.style.top = `${randomTop}vh`; // Spread balloons across the vertical space
+      balloon.style.animationDelay = `${randomDelay}s`;
+      balloon.style.fontSize = `${randomSize}px`; // Set random font size
+      document.body.appendChild(balloon);
+    }
+  
+    // Function to handle button click
+    function handleButtonClick() {
+      // Disable the button after it's clicked
+      this.disabled = true;
+      
+      // Create balloons only once
+      for (let i = 0; i < 10; i++) {
+        createBalloonEmoji();
+      }
+      
+      // Remove the event listener after the balloons are created
+      document.getElementById('likeButton').removeEventListener('click', handleButtonClick);
+    }
+  
+    // Add event listener to the button to trigger balloon creation only once
+    document.getElementById('likeButton').addEventListener('click', handleButtonClick);
+  </script>
+  
+  <style>
+    .balloon {
+      position: fixed;
+      animation-fill-mode: forwards; /* Stops the animation when it ends */
+    }
+
+    @keyframes fly {
+      from { top: 100%; left: 50%; }
+      to { top: -10%; left: 50%; }
+    }
+  </style>
 </section>
+
+
 
 <section id="qrcoder" class="section">
 <br/>
@@ -153,26 +225,79 @@ ans
 </section>
 
 <section id="contact" class="section">
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-contact me
-<br/>
-<br/>
-<br/>
+  <div class="container contact-container">
+      <h1>Contact Us</h1>
+  </div>
+  <div class="container contact-form-container">
+      <div class="contact-form-card" style="flex: 1; margin-right: 20px; padding-right: 20px;">
+          <form id="contactForm">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+              
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+              <div>
+                <label for="emoji">Choose an Emoji:</label><br>
+                <select id="emoji" name="emoji">
+                  <option value="" selected disabled>Select Emoji</option> 
+                  <option value="💚">💚</option>
+                  <option value="👎">👎</option>
+                  <option value="👍">👍</option>
+                  <option value="💩">💩</option>
+                  <option value="😊">😊</option>
+                  <option value="😂">😂</option>
+                  <option value="😢">😢</option>
+                  <option value="😇">😇</option>
+                  <option value="🙌">🙌</option>
+                  <option value="💪">💪</option>
+                  <option value="🎈">🎈</option>
+                </select><br>
+            </div>
+              <button type="submit" id="sendMessageButton">Send Message</button>
+              <button type="reset">Clear</button>
+          </form>
+      </div>
+      <div class="contact-info-card" style="flex: 1; margin-left: 20px; padding-left: 20px;">
+          <h4>Contact Info</h4>
+          <p>
+            <div class="contact-item">
+                <img src="phone_icon.png" alt="Phone Number" class="contact-icon"> 
+                <span>Phone Number: +972508887030</span>
+            </div>
+            <div class="contact-item">
+                <img src="address_icon.png" alt="Address" class="contact-icon">
+                <span>Address: 13218 Herriman Rose Blvd, Utah</span>
+            </div>
+            <div class="contact-item">
+                <img src="facebook-icon.png" alt="Facebook" class="contact-icon">
+                <a href="https://www.facebook.com/omri.peretz.3/" class="contact-link">Omri Peretz</a>
+            </div>
+            <div class="contact-item">
+                <img src="gmail_icon.png" alt="Email" class="contact-icon">
+                <a href="mailto:peretz711@gmail.com" class="contact-link">peretz711@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <img src="twitter-icon.png" alt="Twitter" class="contact-icon">
+                <a href="https://twitter.com/omri_peretz711" class="contact-link">Omri Peretz</a>
+            </div>
+            <div class="contact-item">
+                <img src="instagram-icon.png" alt="Instagram" class="contact-icon">
+                <a href="https://www.instagram.com/omri_peretz11" class="contact-link">omri_peretz11</a>
+            </div>
+        </p>
+        
+      </div>
+  </div>
+  <script>
+    document.getElementById('emoji').addEventListener('change', function() {
+      var emoji = this.value;
+      var messageTextarea = document.getElementById('message');
+      messageTextarea.value += emoji;
+    });
+  </script>
 </section>
 
 
@@ -190,4 +315,9 @@ $(function(){
  });​
  </script>
 </body>
+
+<footer>
+  <p>&copy; 2024 UP' Memorial</p>
+</footer>
+
 </html>

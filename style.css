@@ -1,7 +1,247 @@
-#menu
-{
-	position: fixed;
-	width: 100%;
-	height: 35px;
-	background: white;
+
+.section {
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff; /* White background for readability */
+    border: 4px solid #fff; /* White border */
+    border-radius: 10px; /* Rounded corners for a soft look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    overflow: hidden; /* Keeps all content neatly contained */
+    position: relative; /* Necessary for positioning elements like share-buttons */
 }
+
+.section h1 {
+    text-align: center; /* Centers the title in each section */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.section .container {
+    padding: 20px; /* Uniform padding inside containers */
+}
+
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    background-color: white; /* Ensuring it's a solid color */
+    z-index: 1000; /* High z-index to ensure it's above other content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Adds shadow for better visibility */
+}
+
+#menu ul {
+    list-style-type: none; /* Removes the bullet points */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #003772; /* Dark background for the menu */
+}
+
+#menu li {
+    float: left; /* Positions the list items in a row */
+}
+
+#menu li a {
+    display: block;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 14px 16px; /* Vertical and horizontal padding */
+    text-decoration: none; /* Removes underline from links */
+}
+
+#menu li a:hover {
+    background-color: #111; /* Darker background on hover */
+}
+
+.cover-image {
+	background: url('up_cover.jpg') no-repeat center center;
+	background-size: cover;
+	height: 300px;
+	width: 100%;
+}
+.profile-picture {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	border: 4px solid white;
+	position: absolute;
+	top: 250px;
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 0 8px #aaa;
+}
+.rtl {
+    direction: rtl; /* Right-to-left layout */
+}
+
+.card {
+    background-color: #FFFFFF; /* White background */
+    padding: 20px;
+    margin: 10px 0; /* Vertical margin for separation */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align the text */
+    border-radius: 8px; /* Rounded corners */
+}
+
+.btn-custom {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block; /* Make the button block to fill the width */
+    width: auto; /* Adjust width to content */
+    margin: 20px auto 0; /* Margin top, auto horizontal */
+}
+
+.btn-custom:hover {
+    background-color: #0056b3;
+}
+
+.container {
+    max-width: 1200px; /* Adjust container width if necessary */
+}
+
+.row {
+    text-align: center; /* Ensures content is centered in each column */
+}
+
+.contact-container, .contact-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-form-card, .contact-info-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"], button[type="reset"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+button[type="submit"]:hover, button[type="reset"]:hover {
+    background-color: #45a049;
+}
+
+.contact-icon {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.contact-link {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.slideshow-container {
+	max-width: 100%;
+	position: relative;
+	overflow: hidden;
+	border: 4px solid #fff; /* Add border styling */
+	border-radius: 10px; /* Add border radius */
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+.slides {
+	display: flex;
+	transition: transform 0.5s ease;
+	width: 100%;
+	height: 300px; /* Set a fixed height for the slides */
+	overflow: hidden; /* Hide overflow */
+}
+
+.slide {
+	flex: 0 0 auto;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden; /* Ensure images don't overflow slide */
+	position: relative; /* Required for positioning the share buttons */
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* Fit entire image within container */
+}
+
+.share-buttons {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 1;
+}
+
+.share-buttons a img {
+	width: 20px; /* Adjust share button size */
+	height: auto;
+}
+
+.footer {
+	text-align: center;
+	padding: 20px 0;
+}
+
+.navigation-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+.navigation-buttons button {
+	padding: 10px 20px;
+	font-size: 16px;
+	background-color: #ddd;
+	border: none;
+	cursor: pointer;
+}
+
+#likeButton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.balloon {
+    position: fixed;
+    animation: fly 10s linear 1;
+}
+@keyframes fly {
+    from { top: 100%; left: 50%; }
+    to { top: -10%; left: 50%; }
+}
+
