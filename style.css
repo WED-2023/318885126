@@ -236,14 +236,6 @@ button[type="submit"]:hover, button[type="reset"]:hover {
     cursor: pointer;
     margin-right: 10px;
 }
-.balloon {
-    position: fixed;
-    animation: fly 10s linear 1;
-}
-@keyframes fly {
-    from { top: 100%; left: 50%; }
-    to { top: -10%; left: 50%; }
-}
 #qrcoder {
 	text-align: center; /* Center the content horizontally */
   }

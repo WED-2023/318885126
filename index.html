@@ -130,49 +130,63 @@
 <section id="like" class="section">
   <div class="like-content">
     <h1>Fly a Balloon for dear Carl?</h1>
-    <div style="display: flex; justify-content: center;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
       <button id="likeButton">Fly Balloon</button>
+      <div id="balloonCounterWrapper" style="margin-top: 10px;">
+        <span id="counterText">How many balloons fly for Carl:</span>
+        <span id="balloonCounter" style="font-size: 24px; margin-left: 5px;">0</span>
+      </div>
     </div>
   </div>
   <script>
-    // Function to create a single balloon emoji
+    let balloonCount = localStorage.getItem('balloonCount') ? parseInt(localStorage.getItem('balloonCount')) : 0; // Initialize balloon counter from localStorage
+
+    // Function to create a single large balloon emoji
     function createBalloonEmoji() {
-      const balloon = document.createElement('span');
-      balloon.innerHTML = '🎈';
-      balloon.classList.add('balloon');
-      const randomLeft = Math.random() * 100;
-      const randomTop = Math.random() * 100;
-      const randomSize = Math.floor(Math.random() * 30) + 20; // Random size between 20 and 50
-      const randomDelay = Math.random() * 5; // Add random delay to each balloon
-      balloon.style.left = `${randomLeft}vw`;
-      balloon.style.top = `${randomTop}vh`; // Spread balloons across the vertical space
-      balloon.style.animationDelay = `${randomDelay}s`;
-      balloon.style.fontSize = `${randomSize}px`; // Set random font size
-      document.body.appendChild(balloon);
+        const balloon = document.createElement('div');
+        balloon.innerHTML = '🎈';
+        balloon.classList.add('particle', 'balloon');
+        balloon.style.fontSize = '100px'; // Set a larger font size for the balloon
+        document.body.appendChild(balloon);
+
+        // Increment balloon count
+        balloonCount++;
+        updateBalloonCounter(); // Update counter display
+
+        // Store balloon count in localStorage
+        localStorage.setItem('balloonCount', balloonCount);
+
+        // Remove the balloon after animation
+        setTimeout(() => {
+            balloon.remove();
+        }, 5000); // Adjust duration of animation
     }
-  
-    // Function to handle button click
-    function handleButtonClick() {
-      // Disable the button after it's clicked
-      this.disabled = true;
-      
-      // Create balloons only once
-      for (let i = 0; i < 10; i++) {
-        createBalloonEmoji();
-      }
-      
-      // Remove the event listener after the balloons are created
-      document.getElementById('likeButton').removeEventListener('click', handleButtonClick);
+
+    // Function to update balloon counter display
+    function updateBalloonCounter() {
+        document.getElementById('balloonCounter').textContent = balloonCount;
     }
-  
-    // Add event listener to the button to trigger balloon creation only once
-    document.getElementById('likeButton').addEventListener('click', handleButtonClick);
+
+    // Event listener for toggling button text and creating balloon
+    document.getElementById('likeButton').addEventListener('click', function () {
+        const likeButton = this;
+
+        if (likeButton.textContent === 'Fly Balloon') {
+            likeButton.textContent = 'Fly Another Balloon';
+            createBalloonEmoji();
+        } else {
+            createBalloonEmoji();
+        }
+    });
+
+    // Initialize balloon counter display
+    updateBalloonCounter();
   </script>
-  
+
   <style>
     .balloon {
       position: fixed;
-      animation-fill-mode: forwards; /* Stops the animation when it ends */
+      animation: fly 5s linear 1; /* Adjust the animation properties */
     }
 
     @keyframes fly {
@@ -181,6 +195,15 @@
     }
   </style>
 </section>
+
+
+
+
+
+
+
+
+
 
 
 <section id="qrcoder" class="section">
