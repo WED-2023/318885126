@@ -245,4 +245,12 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 	height: auto; /* Maintain aspect ratio */
 	display: inline-block; /* Ensure the image is treated as a block element */
   }
+  #spa {
+	text-align: center; /* Center the content horizontally */
+  }
   
+  #spa img {
+	width: 20%; /* Adjust the width as needed */
+	height: auto; /* Maintain aspect ratio */
+	display: inline-block; /* Ensure the image is treated as a block element */
+  }
