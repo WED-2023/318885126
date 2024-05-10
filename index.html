@@ -101,23 +101,29 @@
                   <source src="Up (Soundtrack) - 04 Carl Goes Up.mp3" type="audio/mpeg">
               </audio>
           </li>
-          <!-- Add more songs as needed -->
+          <li>
+            <p>UP - trailer</p>
+            <video id="video1" controls>
+                <source src="Disney_Pixar's Up - Official Trailer.mp4" type="video/mp4">
+            </video>
+        </li>
+        
       </ul>
   </div>
   <script>
-      // Get all audio elements
-      const audioElements = document.querySelectorAll('audio');
-      // Pause all audio elements when one is played
-      audioElements.forEach(audio => {
-          audio.addEventListener('play', function() {
-              audioElements.forEach(otherAudio => {
-                  if (otherAudio !== audio && !otherAudio.paused) {
-                      otherAudio.pause();
-                  }
-              });
-          });
-      });
-  </script>
+    // Get all audio and video elements
+    const mediaElements = document.querySelectorAll('audio, video');
+    // Pause all media elements when one is played
+    mediaElements.forEach(media => {
+        media.addEventListener('play', function() {
+            mediaElements.forEach(otherMedia => {
+                if (otherMedia !== media && !otherMedia.paused) {
+                    otherMedia.pause();
+                }
+            });
+        });
+    });
+</script>
 </section>
 
 
@@ -175,7 +181,6 @@
     }
   </style>
 </section>
-
 
 
 <section id="qrcoder" class="section">
