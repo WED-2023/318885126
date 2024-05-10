@@ -38,10 +38,15 @@
     padding: 0;
     overflow: hidden;
     background-color: #003772; /* Dark background for the menu */
+	display: flex;
 }
 
 #menu li {
     float: left; /* Positions the list items in a row */
+}
+
+#menu ul li:last-child {
+    margin-left: auto; /* Pushes the last <li> (with GIFs) to the right */
 }
 
 #menu li a {
@@ -254,3 +259,4 @@ button[type="submit"]:hover, button[type="reset"]:hover {
 	height: auto; /* Maintain aspect ratio */
 	display: inline-block; /* Ensure the image is treated as a block element */
   }
+
