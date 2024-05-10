@@ -71,17 +71,27 @@
       </div>
   </div>
   <script>
-      let slideIndex = 0;
-      function showSlides() {
-          const slides = document.querySelectorAll('.slide');
-          slides.forEach(slide => slide.style.display = 'none');
-          slideIndex++;
-          if (slideIndex > slides.length) slideIndex = 1;
-          slides[slideIndex - 1].style.display = 'block';
-          setTimeout(showSlides, 2000); // Change image every 2 seconds
-      }
-      showSlides(); // Initializes the slideshow
-  </script>
+    let slideIndex = 0;
+    function showSlides() {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => slide.style.display = 'none');
+        if (slideIndex >= slides.length) slideIndex = 0; // Reset slideIndex if it exceeds the number of slides
+        slides[slideIndex].style.display = 'block';
+        // Update share button URLs for the current slide
+        const currentSlide = slides[slideIndex].querySelector('img');
+        const fbShareBtn = slides[slideIndex].querySelector('.fb-share');
+        const twitterShareBtn = slides[slideIndex].querySelector('.twitter-share');
+        const instaShareBtn = slides[slideIndex].querySelector('.insta-share');
+        const currentImageUrl = encodeURIComponent(currentSlide.getAttribute('src'));
+        fbShareBtn.setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${currentImageUrl}`);
+        twitterShareBtn.setAttribute('href', `https://twitter.com/intent/tweet?url=${currentImageUrl}&text=Check%20out%20this%20awesome%20photo%21`);
+        instaShareBtn.setAttribute('href', `https://www.instagram.com/?url=${currentImageUrl}`);
+        slideIndex++; // Increment slideIndex after updating the share button URLs
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+    showSlides(); // Initializes the slideshow
+</script>
+
 </section>
 
 
@@ -324,8 +334,6 @@ ans
     });
   </script>
 </section>
-
-
 
 <script type="text/javascript">
 $(function(){
