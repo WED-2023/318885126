@@ -1,6 +1,12 @@
 
+body {
+    background-image: url('background.jpg');
+    /* Add a margin to the top of the content to account for the fixed menu */
+    margin-top: 50px; /* Adjust this value to match the height of your menu */
+    cursor: url('baloons.cur'), auto;
+}
 .section {
-    max-width: 100%;
+    max-width: 80%;
     margin: auto;
     padding: 70px;
     background-color: #fff; /* White background for readability */
