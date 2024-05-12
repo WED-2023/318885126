@@ -1,6 +1,6 @@
 
 body {
-    background-image: url('background.jpg');
+    background-image: url('pictures/background.jpg');
     /* Add a margin to the top of the content to account for the fixed menu */
     margin-top: 50px; /* Adjust this value to match the height of your menu */
     cursor: url('baloons.cur'), auto;
@@ -68,7 +68,7 @@ body {
 }
 
 .cover-image {
-	background: url('up_cover.jpg') no-repeat center center;
+	background: url('pictures/up_cover.jpg') no-repeat center center;
 	background-size: cover;
 	height: 300px;
 	width: 100%;
