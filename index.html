@@ -48,7 +48,7 @@
       <h1>Photos</h1>
       <div class="slides">
           <div class="slide">
-              <img src="pictures/up_cover.jpg" alt="Image 1">
+              <img src="up_cover.jpg" alt="Image 1">
               <div class="share-buttons">
                   <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
                       <img src="pictures/facebook-icon.png" alt="Share on Facebook">
@@ -62,7 +62,7 @@
               </div>
           </div>
           <div class="slide">
-              <img src="pictures/up_elder.jpg" alt="Image 2">
+              <img src="up_elder.jpg" alt="Image 2">
               <div class="share-buttons">
                   <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
                       <img src="pictures/facebook-icon.png" alt="Share on Facebook">
@@ -75,7 +75,48 @@
                   </a>
               </div>
           </div>
-          <!-- Add more slides as needed -->
+          <div class="slide">
+            <img src="up3.jpg" alt="Image 3">
+            <div class="share-buttons">
+                <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="pictures/facebook-icon.png" alt="Share on Facebook">
+                </a>
+                <a class="twitter-share" href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="pictures/twitter-icon.png" alt="Share on Twitter">
+                </a>
+                <a class="insta-share" href="#" target="_blank" rel="noopener noreferrer">
+                    <img src="pictures/instagram-icon.png" alt="Share on Instagram">
+                </a>
+            </div>
+        </div>
+        <div class="slide">
+          <img src="up4.jpg" alt="Image 4">
+          <div class="share-buttons">
+              <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
+                  <img src="pictures/facebook-icon.png" alt="Share on Facebook">
+              </a>
+              <a class="twitter-share" href="#" target="_blank" rel="noopener noreferrer">
+                  <img src="pictures/twitter-icon.png" alt="Share on Twitter">
+              </a>
+              <a class="insta-share" href="#" target="_blank" rel="noopener noreferrer">
+                  <img src="pictures/instagram-icon.png" alt="Share on Instagram">
+              </a>
+          </div>
+      </div>
+      <div class="slide">
+        <img src="up5.jpg" alt="Image 5">
+        <div class="share-buttons">
+            <a class="fb-share" href="#" target="_blank" rel="noopener noreferrer">
+                <img src="pictures/facebook-icon.png" alt="Share on Facebook">
+            </a>
+            <a class="twitter-share" href="#" target="_blank" rel="noopener noreferrer">
+                <img src="pictures/twitter-icon.png" alt="Share on Twitter">
+            </a>
+            <a class="insta-share" href="#" target="_blank" rel="noopener noreferrer">
+                <img src="pictures/instagram-icon.png" alt="Share on Instagram">
+            </a>
+        </div>
+    </div>
       </div>
   </div>
   <script>
@@ -95,7 +136,7 @@
         twitterShareBtn.setAttribute('href', `https://twitter.com/intent/tweet?url=${currentImageUrl}&text=Check%20out%20this%20awesome%20photo%21`);
         instaShareBtn.setAttribute('href', `https://www.instagram.com/?url=${currentImageUrl}`);
         slideIndex++; // Increment slideIndex after updating the share button URLs
-        setTimeout(showSlides, 2000); // Change image every 2 seconds
+        setTimeout(showSlides, 3000); // Change image every 2 seconds
     }
     showSlides(); // Initializes the slideshow
 </script>
@@ -166,7 +207,7 @@
         const balloon = document.createElement('div');
         balloon.innerHTML = '🎈';
         balloon.classList.add('particle', 'balloon');
-        balloon.style.fontSize = '100px'; // Set a larger font size for the balloon
+        balloon.style.fontSize = '100px';
         document.body.appendChild(balloon);
 
         // Increment balloon count
