@@ -338,26 +338,27 @@
     });
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault(); // Prevent the form from submitting normally
       
-      // Get form values
-      var name = document.getElementById('name').value;
-      var email = document.getElementById('email').value;
-      var message = document.getElementById('message').value;
+    // Get form values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
       
-      // Construct mailto link with subject and body
-      var mailtoLink = 'mailto:omripere@post.bgu.ac.il';
-      mailtoLink += '?subject=Message from ' + encodeURIComponent(name);
-      mailtoLink += '&body=' + encodeURIComponent(message + '\n\nFrom: ' + email);
+    // Construct mailto link with subject and body
+    var subject = 'Mail To UP!';
+    var body = message + '\n\nFrom: ' + name;
+    var mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       
-      // Open mailto link in a new window
-      window.open(mailtoLink);
+    // Open mailto link in a new window
+    window.open(mailtoLink);
 
-      // Show confirmation message
-      alert('Your message has been sent!');
-      // Reset the form
+    // Show confirmation message
+    alert('Your message has been sent!');
+    // Reset the form
     document.getElementById('contactForm').reset();
-    });
+});
+
   </script>
 </section>
 
